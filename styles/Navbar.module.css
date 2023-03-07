@@ -1,0 +1,44 @@
+.navbar_main {
+    background-color: rgb(238, 231, 219);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar_logo {
+    /* flex: 1; */
+    padding: 10px;
+}
+
+.navbar_logo img {
+    width: 100px;
+    height: 100px;
+}
+
+.navbar_list {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    /* background-color: blueviolet; */
+    flex: 3;
+}
+
+.navbar_list li {
+    cursor: pointer;
+    border-bottom: solid;
+    margin: 0 10px;
+}
+
+
+.navbar_icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: aquamarine; */
+}
+
+.navbar_icon {
+    margin: 0 10px;
+    cursor: pointer;
+    /* background-color: aquamarine; */
+}
