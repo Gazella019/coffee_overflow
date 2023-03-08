@@ -1,0 +1,22 @@
+
+.about_section {
+    display: flex;
+    margin: 0 5vw;
+    height: 50vh;
+    background-color: greenyellow;
+}
+
+.about_left {
+    padding: 2rem;
+    background-color: aqua;
+    flex: 1;
+}
+
+.about_left h1{
+    color: blueviolet;
+}
+
+.about_right {
+    background-color: aquamarine;
+    flex: 1;
+}
