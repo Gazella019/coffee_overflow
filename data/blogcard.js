@@ -1,0 +1,22 @@
+
+const blogCardData = [
+    {
+        title: "Life in the City",
+        imgUrl: "https://images.unsplash.com/photo-1506260408121-e353d10b87c7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2456&q=80",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+        date: "2020/07/19",
+        category: "Travel"
+    },
+    {
+        title: "Summers in Manhattan",
+        imgUrl: "https://images.unsplash.com/photo-1502786129293-79981df4e689?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+        date: "2019/05/26",
+        category: "Travel"
+    }
+]
+
+
+
+
+export default blogCardData;

@@ -19,7 +19,6 @@ const Hero = () => {
             <SplideTrack>
                 <SplideSlide className={styles.splide_slide}>
                     <img src="./images/hero2.jpg" alt="Image 2"/>
-                    <p></p>
                 </SplideSlide>
                 <SplideSlide className={styles.splide_slide}>
                     <img src="./images/hero1.jpg" alt="Image 2"/>

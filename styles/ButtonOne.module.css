@@ -1,0 +1,14 @@
+.button {
+    background-color: rgba(0, 0, 0, 0.951);
+    color: white;
+    font-size: 12px;
+    padding: 2px;
+    width: 100px;
+    height: 50px;
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.button :hover {
+    background-color: rgba(23, 22, 22, 0.951);
+}
