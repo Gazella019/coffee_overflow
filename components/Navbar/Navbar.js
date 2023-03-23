@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from '@/styles/Navbar.module.css'
+import Link from 'next/link';
 import { BsFacebook, BsInstagram, BsGithub} from 'react-icons/bs';
 
 const Navbar = () => {
@@ -10,7 +11,9 @@ const Navbar = () => {
         </div>
         <ul className={styles.navbar_list}>
             <li>
-                Blog
+                <Link href={'./posts/'}>
+                    Blog
+                </Link>
             </li>
             <li>
                 About

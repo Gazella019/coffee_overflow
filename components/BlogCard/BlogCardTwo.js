@@ -19,16 +19,16 @@ const BlogCardTwo = () => {
           </div>
         </div>
 
-        {/* <div className={styles.blog_card}>
+        <div className={styles.blog_card}>
           <div className={styles.blog_img}>
             <img src={blogData[1].imgUrl}/>
           </div>
           <div className={styles.blog_content}>
             <h1>{blogData[1].title}</h1>
             <h3>{blogData[1].date} <span>{blogData[0].category}</span></h3>
-            <p>{blogData[1].content}</p>
+            <ButtonOne/>
           </div>
-        </div> */}
+        </div>
     </section>
   )
 }

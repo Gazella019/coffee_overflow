@@ -2,10 +2,11 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import Navbar from '../components/Navbar/Navbar'
-import Hero from '../components/Hero/Hero'
-import About from '../components/About/About'
-import BlogCardOne from '../components/BlogCard/BlogCardOne'
-import BlogCardTwo from '../components/BlogCard/BlogCardTwo'
+import Hero from '@/components/Hero/Hero'
+import About from '@/components/About/About'
+import BlogCardOne from '@/components/BlogCard/BlogCardOne'
+import BlogCardTwo from '@/components/BlogCard/BlogCardTwo'
+import Layout from '@/components/Layout/Layout'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,11 +19,13 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main>
-        <Navbar/>
-        <Hero/>
-        <About/>
-        <BlogCardOne/>
-        <BlogCardTwo/>
+        {/* <Navbar/> */}
+        <Layout>
+          <Hero/>
+          <About/>
+          <BlogCardOne/>
+          <BlogCardTwo/>
+        </Layout>
       </main>
     </>
   )
