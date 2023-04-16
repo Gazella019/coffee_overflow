@@ -1,6 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
 import { getPostsData } from '../../lib/posts'
+import styles from './posts.module.css'
+import BlogCardOne from '@/components/BlogCard/BlogCardOne'
 
 const Home = ({ allPosts }) => {
 
@@ -18,6 +20,7 @@ const Home = ({ allPosts }) => {
             )
         }) }
       </div>
+      <BlogCardOne/>
     </div>
   )
 }

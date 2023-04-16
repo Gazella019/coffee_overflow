@@ -7,6 +7,8 @@ import About from '@/components/About/About'
 import BlogCardOne from '@/components/BlogCard/BlogCardOne'
 import BlogCardTwo from '@/components/BlogCard/BlogCardTwo'
 import Layout from '@/components/Layout/Layout'
+import Biography from '@/components/Biography/Biography'
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,6 +25,8 @@ export default function Home() {
         <Layout>
           <Hero/>
           <About/>
+          <Biography/>
+          <CategoryCardTwo/>
           <BlogCardOne/>
           <BlogCardTwo/>
         </Layout>

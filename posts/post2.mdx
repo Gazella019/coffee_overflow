@@ -7,4 +7,40 @@ description: a place to drink coffee
 
 ## I am demo two
 
-Here's a **neat** demo2:
+```js showLineNumbers
+const a = 1;
+a = 2;
+```
+
+```tsx showLineNumbers {5,15-17}
+import '@/styles/globals.css';
+import type { AppProps } from 'next/app';
+import Head from 'next/head';
+import { ThemeProvider } from 'next-themes';
+import LayoutWrapper from '@/components/LayoutWrapper';
+function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <ThemeProvider attribute="class">
+      <Head>
+        <meta name="viewport" content="viewport-fit=cover" />
+      </Head>
+      <LayoutWrapper>
+        <Component {...pageProps} />
+      </LayoutWrapper>
+    </ThemeProvider>
+  );
+}
+export default MyApp;
+```
+
+```python
+print("Hello world!")
+```
+
+```c
+printf("Hello world!");
+```
+
+```shell
+$ echo "Hello world!"
+```

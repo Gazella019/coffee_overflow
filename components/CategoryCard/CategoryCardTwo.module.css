@@ -1,0 +1,56 @@
+.container {
+    width: 100vw;
+    height: 55vh;
+    /* background-color: yellowgreen; */
+    display: flex;
+}
+
+.category {
+    width: 20%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(146, 146, 146);
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: .5s;
+}
+
+.category img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.category:hover img {
+    transform: rotate(-2deg) scale(1.1);
+}
+
+.category:hover .overlay {
+    opacity: 0.4;
+}
+
+.text {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    color: white;
+    z-index: 2;
+    font-size: 35px;
+    text-transform: uppercase;
+    transition: .2s;
+}
+
+.category:hover .text {
+    border-bottom: solid;
+}

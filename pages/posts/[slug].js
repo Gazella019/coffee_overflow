@@ -2,13 +2,14 @@ import React from 'react'
 import { getMDXComponent } from 'mdx-bundler/client'
 import { getAllPostIds, getPostMdxData } from '../../lib/posts'
 import Layout from '@/components/Layout/Layout'
+import styles from './mdxStyle.module.css'
 import CategoryCardOne from '@/components/CategoryCard/CategoryCardOne'
 
 const Post = ( {mdxData: {slug, code, frontmatter}} ) => {
     const Component = React.useMemo(() => getMDXComponent(code), [code])
     return (
         <Layout>
-            <div>
+            <div className={styles.mdxWrapper}>
                 <h1>{frontmatter.title}</h1>
                 <p>{frontmatter.description}</p>
                 <p>{slug}</p>

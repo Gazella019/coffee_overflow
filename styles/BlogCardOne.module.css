@@ -1,7 +1,7 @@
 
 .container {
     /* height: 50vh; */
-    background-color: rgb(239, 239, 239);
+    /* background-color: rgb(239, 239, 239); */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,7 +29,9 @@
     flex: 2;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+    /* justify-content: space-between; */
+    margin-left: 20px;
 }
 
 .blog_img img {
@@ -41,4 +43,18 @@
 .blog_img img:hover {
     transform: scale(1.05);
     transition: all .5s;
+}
+
+.blog_content p {
+    font-size: 20px;
+    margin-top: 2rem;
+}
+
+.blog_content h1 {
+    font-size: 20px;
+}
+
+.blog_content h3 {
+    font-size: 20px;
+    margin-top: 2rem;
 }
