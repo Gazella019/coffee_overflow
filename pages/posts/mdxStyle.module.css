@@ -1,5 +1,5 @@
 .mdxWrapper {
-    background-color: rgb(243, 243, 243);
-    width: 90%;
+    /* background-color: rgb(243, 243, 243); */
+    max-width: 920px;
     margin: 0 auto;
 }

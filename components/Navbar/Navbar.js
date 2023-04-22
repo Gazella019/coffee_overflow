@@ -8,12 +8,12 @@ const Navbar = () => {
     <div className={styles.navbar_main}> 
         <div className={styles.navbar_logo}>
             <Link href={'/'}>
-                <img src='./logo.png'/>
+                <img src='/logo.png'/>
             </Link>
         </div>
         <ul className={styles.navbar_list}>
             <li>
-                <Link href={'./posts/'}>
+                <Link href={'/posts/'}>
                     Blog
                 </Link>
             </li>
