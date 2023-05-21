@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '@/styles/Navbar.module.css'
+import styles from './Navbar.module.css'
 import Link from 'next/link';
 import { BsFacebook, BsInstagram, BsGithub} from 'react-icons/bs';
 
@@ -12,24 +12,29 @@ const Navbar = () => {
             </Link>
         </div>
         <ul className={styles.navbar_list}>
-            <li>
+            <li className={styles.nav_item}>
                 <Link href={'/posts/'}>
                     Blog
                 </Link>
             </li>
-            <li>
+            <li className={styles.nav_item}>
                 <Link href={'/about/'}>
                     About
                 </Link>
             </li>
-            <li>
+            <li className={styles.nav_item}>
                 <Link href={'/gallery/'}>
                     Gallery
                 </Link>
             </li>
-            <li>
+            <li className={styles.nav_item}>
                 <Link href={'/contact/'}>
-                    Contace
+                    Contact
+                </Link>
+            </li>
+            <li className={styles.nav_item}>
+                <Link href={'/demo/'}>
+                    Demo
                 </Link>
             </li>
         </ul>

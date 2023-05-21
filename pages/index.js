@@ -9,7 +9,6 @@ import BlogCardTwo from '@/components/BlogCard/BlogCardTwo'
 import Layout from '@/components/Layout/Layout'
 import Biography from '@/components/Biography/Biography'
 
-
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -26,8 +25,8 @@ export default function Home() {
           <Hero/>
           <About/>
           <Biography/>
-          <BlogCardOne/>
-          <BlogCardTwo/>
+          {/* <BlogCardOne/> */}
+          {/* <BlogCardTwo/> */}
         </Layout>
       </main>
     </>

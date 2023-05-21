@@ -10,22 +10,13 @@ const About = () => {
                 ABOUT ME
             </h1>
             <p>
-            And purpose resonates. Sincere core values are key to connecting with real people in a digital first society.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </p>
             <p>
-            As an agency that exists to create remarkably beautiful things that make an impact, shape culture seek  fearless partners with belief in their brand to create.
-            </p>
-            <p>
-            Experiences that will empower action, and build and legacy through innovation.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
         </div>
         <div className={styles.about_right}>
-            {/* <Image
-                src="/images/aboutme.jpg"
-                alt="about-me"
-                width={500}
-                height={700}
-            /> */}
             <div className={styles.about_img}>
                 <img
                     src="/images/aboutme.jpg"

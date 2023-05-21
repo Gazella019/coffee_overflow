@@ -1,0 +1,40 @@
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper {
+    width: 90%;
+}
+
+.splide {
+    /* background-color: blanchedalmond; */
+    width: 100%;
+}
+
+.splide_slide {
+    position: relative;
+}
+
+.splide_slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero_text {
+    position: absolute;
+    left: 10%;
+    bottom: 15%;
+    z-index: 100;
+    color: white;
+}
+/* .splide_slide {
+    opacity: 0.5;
+}
+  
+.splide_slide.is-active {
+    opacity: 0;
+} */
