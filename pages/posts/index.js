@@ -4,20 +4,21 @@ import { getPostsData } from '../../lib/posts'
 import styles from './posts.module.css'
 import Layout from '@/components/Layout/Layout'
 import BlogCardFour from '@/components/BlogCard/BlogCardFour'
+import Category from '@/components/Category/Category'
 
 const Home = ({ allPosts }) => {
 
     const [postList, setPostList] = useState(allPosts);
-    function changeList() {
-        let newlist = postList;
-        // newlist.filter((post) => post.category === "travel");
-        setPostList(newlist[0]);
-        console.log(newlist);
-        console.log(postList);
+    const [fileterList, setFilterList] = useState(allPosts);
+
+    function filterListByCategory(listName) {
+        const newlist = postList.filter((post) => post.category === listName);
+        setFilterList(newlist);
     }
     // setPostList(allPosts);
     return (
     <Layout>
+        <Category postList={postList} filterListByCategory={filterListByCategory}/>
         <div>
         {/* <div>
             {allPosts.map(post => {
@@ -33,15 +34,7 @@ const Home = ({ allPosts }) => {
                 )
             }) }
         </div> */}
-        <BlogCardFour allPosts={allPosts}/>
-        {postList.map(post => (
-            <h1>
-                {post.category}
-            </h1>
-        ))}
-        </div>
-        <div onClick={() => changeList()}>
-            travel
+        <BlogCardFour allPosts={fileterList}/>
         </div>
     </Layout>
   )

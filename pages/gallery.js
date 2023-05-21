@@ -100,13 +100,13 @@ const gallery = () => {
           )}
         </div>
             
-          <CldImage
+          {/* <CldImage
             width="960"
             height="600"
             src="https://res.cloudinary.com/dttvh1upn/image/upload/v1682557580/anita-austvika-0C4DOPckfKU-unsplash_s5fxw1.jpg"
             sizes="100vw"
             alt="Description of my image"
-          />
+          /> */}
            {/* <img src="https://res.cloudinary.com/dttvh1upn/image/upload/v1682557580/anita-austvika-0C4DOPckfKU-unsplash_s5fxw1.jpg"/> */}
     </Layout>
   )
