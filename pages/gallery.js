@@ -4,6 +4,7 @@ import styles from '@/styles/page.module.css'
 import Layout from '@/components/Layout/Layout'
 import { MdClose } from 'react-icons/md'
 import {AiOutlineArrowLeft, AiOutlineArrowRight} from 'react-icons/ai'
+import { CldImage } from 'next-cloudinary';
 
 const gallery = () => {
 
@@ -98,6 +99,15 @@ const gallery = () => {
             </div>
           )}
         </div>
+            
+          <CldImage
+            width="960"
+            height="600"
+            src="https://res.cloudinary.com/dttvh1upn/image/upload/v1682557580/anita-austvika-0C4DOPckfKU-unsplash_s5fxw1.jpg"
+            sizes="100vw"
+            alt="Description of my image"
+          />
+           {/* <img src="https://res.cloudinary.com/dttvh1upn/image/upload/v1682557580/anita-austvika-0C4DOPckfKU-unsplash_s5fxw1.jpg"/> */}
     </Layout>
   )
 }

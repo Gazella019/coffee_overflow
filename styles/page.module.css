@@ -15,14 +15,14 @@
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 300px;
     grid-gap: 10px;
-    grid-auto-flow: dense;
+    /* grid-auto-flow: dense; */
     /* grid-template-rows: ; */
 
 }
 
-.image_card {
+/* .image_card {
     overflow: hidden;
-}
+} */
 
 .image_card img{
     width: 100%;

@@ -1,28 +1,32 @@
 import React from 'react'
 import styles from './BlogCardFour.module.css'
-import data from '@/data/blogPost.json'
+import Link from 'next/link'
+// import data from '@/data/blogPost.json'
 
-const BlogCardFour = () => {
+const BlogCardFour = ({allPosts}) => {
   return (
     <div className={styles.container}>
-      {data.map((post, index) =>
-      <div className={styles.blog_card}>
-        <div className={styles.img}>
-          {post.title}
-        </div>
-        <div className={styles.blog_text}>
-          <div className={styles.title}>
-            {post.title}
-          </div>
-          <div className={styles.category}>
-            {post.category}
-          </div>
-          <div className={styles.content}>
-            {post.content}
-          </div>
-         c
-        </div>
-      </div>)}
+      <div className={styles.wrapper}>
+        {allPosts.map((post, index) =>
+          <Link href={`/posts/${post.id}`} className={styles.blog_card}>
+              <div className={styles.blog_image}>
+                <img src={post.imgUrl}/>
+                {/* hello */}
+              </div>
+              <div className={styles.blog_text}>
+                <div className={styles.blog_title}>
+                  {post.title}
+                </div>
+                <p>
+                  {post.description}
+                </p>
+                <button className={styles.blog_btn}>
+                  Read More
+                </button>
+              </div>
+          </Link>
+        )}
+      </div>
     </div>
   )
 }
