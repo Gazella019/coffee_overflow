@@ -8,6 +8,8 @@ import BlogCardOne from '@/components/BlogCard/BlogCardOne'
 import BlogCardTwo from '@/components/BlogCard/BlogCardTwo'
 import Layout from '@/components/Layout/Layout'
 import Biography from '@/components/Biography/Biography'
+import SwiperOne from '@/components/Swiper/SwiperOne'
+import SwiperTwo from '@/components/Swiper/SwiperTwo'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,7 +24,9 @@ export default function Home() {
       <main>
         {/* <Navbar/> */}
         <Layout>
-          <Hero/>
+          {/* <Hero/> */}
+          <SwiperOne/>
+          <SwiperTwo/>
           <About/>
           <Biography/>
           {/* <BlogCardOne/> */}

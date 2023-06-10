@@ -12,6 +12,10 @@ const Home = ({ allPosts }) => {
     const [fileterList, setFilterList] = useState(allPosts);
 
     function filterListByCategory(listName) {
+        if (listName == "all") {
+            setFilterList(postList);
+            return;
+        }
         const newlist = postList.filter((post) => post.category === listName);
         setFilterList(newlist);
     }

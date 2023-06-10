@@ -21,3 +21,14 @@ a {
 button {
   border: none;
 }
+
+/* Swiper section */
+.custom-pagination-bullet {
+  padding: 10rem 10px;
+  color: red;
+}
+
+.swiperTwo-pagination {
+  width: 100%;
+  background-color: aqua;
+}

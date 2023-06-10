@@ -20,7 +20,7 @@ const BlogCardFour = ({allPosts}) => {
                   <div className={styles.blog_title}>
                     {post.title}
                   </div>
-                  <p>
+                  <p className={styles.blog_description}>
                     {post.description}
                   </p>
                   <button className={styles.blog_btn}>

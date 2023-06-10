@@ -1,0 +1,73 @@
+.container {
+    background-color: beige;
+    display: flex;
+    /* min-height: 80vh; */
+    width: 100%;
+    position: relative;
+}
+
+.slide {
+    position: relative;
+    width: 100%;
+    height: 40rem;
+}
+
+.slide_image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide_box {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 60%;
+    height: 50px;
+    background-color: rgb(56, 56, 56);
+    color: white;
+    border-radius: 10px 10px 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper_controller {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    z-index: 10;
+    padding: 0 2rem;
+    /* background-color: blue; */
+}
+
+.swiper_navigation {
+    width: 100%;
+    background-color: beige;
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    /* z-index: 11; */
+    /* position: absolute; */
+}
+.swiper {
+    position: relative;
+}
+
+.arrow {
+    cursor: pointer;
+    color: rgb(221, 232, 202);
+    font-size: 50px;
+    transition: all 0.3s;
+}
+
+.arrow:hover{
+    color: rgb(211, 242, 154);
+}
+
