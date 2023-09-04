@@ -10,6 +10,7 @@ import Layout from '@/components/Layout/Layout'
 import Biography from '@/components/Biography/Biography'
 import SwiperOne from '@/components/Swiper/SwiperOne'
 import SwiperTwo from '@/components/Swiper/SwiperTwo'
+import { motion } from 'framer-motion'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,16 +23,19 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main>
-        {/* <Navbar/> */}
-        <Layout>
-          {/* <Hero/> */}
+        {/* <Hero/> */}
+        {/* <motion.div
+          initial={{opacity: 0}}
+          animate={{opacity: 1}}
+          transition={{duration: 2}}
+        > */}
           <SwiperOne/>
-          <SwiperTwo/>
+          {/* <SwiperTwo/> */}
           <About/>
           <Biography/>
-          {/* <BlogCardOne/> */}
-          {/* <BlogCardTwo/> */}
-        </Layout>
+        {/* </motion.div> */}
+        {/* <BlogCardOne/> */}
+        {/* <BlogCardTwo/> */}
       </main>
     </>
   )

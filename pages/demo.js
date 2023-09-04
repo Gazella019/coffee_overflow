@@ -1,15 +1,20 @@
 
 // This is the demo page for all pre-made components
 import React from 'react'
-import Layout from '@/components/Layout/Layout'
 import InstaGallery from '@/components/ImageGallery/InstaGallery'
 import { MdWidthNormal } from 'react-icons/md';
+import { motion } from 'framer-motion';
 
 export default function Home({ galleryData }) {
     return (
-      <Layout>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: .6 }}
+        >
         <InstaGallery galleryData={galleryData}/>
-      </Layout>
+      </motion.div>
     )
   }
 
@@ -36,8 +41,8 @@ export async function getStaticProps() {
       height: resource.height
     }
   })
-  console.log("---------------------------")
-  console.log(galleryData);
+  // console.log("---------------------------")
+  // console.log(galleryData);
   return {
       props: {
         galleryData

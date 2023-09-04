@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { getPostsData } from '../../lib/posts'
-import styles from './posts.module.css'
-import Layout from '@/components/Layout/Layout'
+import styles from '@/styles/page.module.css'
 import BlogCardFour from '@/components/BlogCard/BlogCardFour'
 import Category from '@/components/Category/Category'
+import { motion } from 'framer-motion'
 
 const Home = ({ allPosts }) => {
 
@@ -21,26 +21,18 @@ const Home = ({ allPosts }) => {
     }
     // setPostList(allPosts);
     return (
-    <Layout>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: .6 }}
+      className={styles.container}
+    >
         <Category postList={postList} filterListByCategory={filterListByCategory}/>
         <div>
-        {/* <div>
-            {allPosts.map(post => {
-                return (
-                    <li key={post.id} >
-                        <Link href={`/posts/${post.id}`}>
-                            {post.title}
-                        </Link>
-                        <h1>
-                            {post.imgUrl}
-                        </h1>
-                    </li>
-                )
-            }) }
-        </div> */}
-        <BlogCardFour allPosts={fileterList}/>
+            <BlogCardFour allPosts={fileterList}/>
         </div>
-    </Layout>
+    </motion.div>
   )
 }
 

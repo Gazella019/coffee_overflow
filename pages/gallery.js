@@ -2,115 +2,112 @@ import React, { use } from 'react'
 import { useState } from 'react'
 import styles from '@/styles/page.module.css'
 import Layout from '@/components/Layout/Layout'
-import { MdClose } from 'react-icons/md'
+import { motion } from 'framer-motion'
+import Modal from '@/components/Ｍodal/Modal'
 import {AiOutlineArrowLeft, AiOutlineArrowRight} from 'react-icons/ai'
-import { CldImage } from 'next-cloudinary';
 
-const gallery = () => {
+const gallery = ({ galleryData }) => {
 
-  const images = [
-
-    "https://images.unsplash.com/photo-1679908208587-ee7199a0a0c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1635&q=80",
-    "https://images.unsplash.com/photo-1679882028877-8ff92cf0abd4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1665&q=80",
-    "https://images.unsplash.com/photo-1679679007793-25fa830507c1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1635&q=80",
-    "https://images.unsplash.com/photo-1679834841135-b73991e3941d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80",
-    "https://images.unsplash.com/photo-1679678691002-cca4ae795169?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1635&q=80",
-    "https://plus.unsplash.com/premium_photo-1669752000456-dd35381ca44f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
-    "https://images.unsplash.com/photo-1679834831394-8a7e5b7230f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80",
-    "https://images.unsplash.com/photo-1679883814689-08676c813d0e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
-    "https://images.unsplash.com/photo-1679896230078-b99bd7305d3f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1386&q=80",
-    "https://images.unsplash.com/photo-1679843004484-205e29b9b740?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80",
-    "https://images.unsplash.com/photo-1679859339757-d499fafc716e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80",
-
-  ]
   const [showModal, setShowModal] = useState(false);
   const [imageIndex, setImageIndex] = useState(1);
 
-  function setNextImage(index) {
-    // if(index >= images.length-1)
-    //   setImageIndex(0);
-    // else
-    //   setImageIndex(index+1);
-    setImageIndex(imageIndex+1);
+  function setNextImage() {
+    let newIndex;
+    if(imageIndex >= (galleryData.length-1))
+      newIndex = 0;
+    else
+      newIndex = imageIndex + 1;
+    setImageIndex(newIndex);
   }
 
-  function setPrevImage(index) {
-    // if(index < 0)
-    //   setImageIndex(images.length-1);
-    // else
-    //   setImageIndex(index-1);
-    setImageIndex(imageIndex-1);
+  function setPrevImage() {
+    let newIndex;
+    if(imageIndex === 0)
+      newIndex = galleryData.length-1;
+    else
+      newIndex = imageIndex-1;
+    setImageIndex(newIndex);
   }
 
-  // const function setModalIndxe()
+  function setModal(index) {
+    setShowModal(true);
+    setImageIndex(index);
+  }
   return (
-    <Layout>
-        <div className={styles.container}>
-          <div className={styles.wrapper}>
-              <div className={styles.image_card} onClick={() => setShowModal(true)}>
-                <img src={images[0]}/>
+        <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: .6 }}
+        className={styles.container}
+        >
+        <div className={styles.wrapper}>
+          {galleryData.map((data, index) => (
+              <div className={styles.image_card} onClick={() => setModal(index)}>
+                <img src={data.image}/>
               </div>
-              <div className={`${styles.image_card} ${styles.big}`}>
-                <img src={images[1]}/>
-              </div>
-              <div className={styles.image_card}>
-                <img src={images[2]}/>
-              </div>
-              <div className={styles.image_card}>
-                <img src={images[3]}/>
-              </div>
-              <div className={`${styles.image_card} ${styles.horizontal}`}>
-                <img src={images[4]}/>
-              </div>
-              <div className={styles.image_card}>
-                <img src={images[5]}/>
-              </div>
-              <div className={`${styles.image_card} ${styles.vertical}`}>
-                <img src={images[6]}/>
-              </div>
-              <div className={styles.image_card}>
-                <img src={images[7]}/>
-              </div>
-              <div className={styles.image_card}>
-                <img src={images[8]}/>
-              </div>
-              <div className={styles.image_card}>
-                <img src={images[9]}/>
-              </div>
-              <div className={styles.image_card}>
-                <img src={images[10]}/>
-              </div>
-          </div>
-          {showModal && (
-            <div className={styles.modal}>
-              <div className={styles.backdrop}>
-                <MdClose className={styles.close_btn} onClick={() => setShowModal(false)}/>
-                <div className={styles.modal_card}>
-                  <div className={styles.modal_img} onClick={() => setShowModal(false)}>
-                    <img src={images[`${imageIndex}`]}/>
-                  </div>
-                  <div className={styles.modal_content}>
-                    modal content
-                  </div>
-                </div>
-                <AiOutlineArrowLeft className={styles.icon_left} onClick={setNextImage}/>
-                <AiOutlineArrowRight className={styles.icon_right} onClick={setPrevImage}/>
-              </div>
+          ))}
+            {/* <div className={styles.image_card} onClick={() => setShowModal(true)}>
+              <img src={galleryData[0].image}/>
             </div>
-          )}
+            <div className={`${styles.image_card} ${styles.big}`}>
+              <img src={galleryData[1].image}/>
+            </div>
+            <div className={styles.image_card}>
+              <img src={galleryData[2].image}/>
+            </div>
+            <div className={styles.image_card}>
+              <img src={galleryData[3].image}/>
+            </div>
+            <div className={`${styles.image_card} ${styles.horizontal}`}>
+              <img src={galleryData[4].image}/>
+            </div>
+            <div className={styles.image_card}>
+              <img src={galleryData[5].image}/>
+            </div>
+            <div className={`${styles.image_card} ${styles.vertical}`}>
+              <img src={galleryData[6].image}/>
+            </div>
+            <div className={styles.image_card}>
+              <img src={galleryData[7].image}/>
+            </div>
+            <div className={styles.image_card}>
+              <img src={galleryData[8].image}/>
+            </div> */}
         </div>
-            
-          {/* <CldImage
-            width="960"
-            height="600"
-            src="https://res.cloudinary.com/dttvh1upn/image/upload/v1682557580/anita-austvika-0C4DOPckfKU-unsplash_s5fxw1.jpg"
-            sizes="100vw"
-            alt="Description of my image"
-          /> */}
-           {/* <img src="https://res.cloudinary.com/dttvh1upn/image/upload/v1682557580/anita-austvika-0C4DOPckfKU-unsplash_s5fxw1.jpg"/> */}
-    </Layout>
+        {showModal && (
+          <Modal showModal={showModal} galleryData = {galleryData} imageIndex = {imageIndex} setNextImage={setNextImage} setPrevImage={setPrevImage} setShowModal={setShowModal}/>
+        )}
+      </motion.div>
   )
 }
 
-export default gallery
+export async function getStaticProps() {
+  const cloudinary = require('cloudinary').v2;
 
+  cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET
+  });
+
+  const result = await cloudinary.api.resources();
+  const { resources } = result;
+  const galleryData = resources.map(resource => {
+    return {
+      id: resource.asset_id,
+      title: resource.public_id,
+      image: resource.url,
+      date: resource.created_at,
+      width: resource.width,
+      height: resource.height
+    }
+  })
+  return {
+      props: {
+        galleryData,
+      }
+  }
+}
+
+export default gallery

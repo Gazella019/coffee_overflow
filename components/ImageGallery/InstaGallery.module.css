@@ -2,6 +2,7 @@
     width: 100%;
     min-height: 70vh;
     display: flex;
+    flex-direction: column;
     gap: 20px;
 }
 
@@ -25,4 +26,20 @@
     display: grid;
     gap: 5px;
     grid-template-columns: repeat(3, 1fr);
+}
+
+.title_area {
+    max-width: 935px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+}
+
+.title_area .text {
+    align-self:last baseline;
+}
+
+.inline_block {
+    display: inline-block;
+    overflow: hidden;
 }

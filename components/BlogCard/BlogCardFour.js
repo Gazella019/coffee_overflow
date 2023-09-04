@@ -7,11 +7,18 @@ import { motion, AnimatePresence } from "framer-motion"
 const BlogCardFour = ({allPosts}) => {
   return (
     <div className={styles.container}>
-      <motion.div animate={{opacity: 1}} initial={{opacity: 0}} exit={{opacity: 0}} layout className={styles.wrapper}>
-        <AnimatePresence>
+      <motion.div className={styles.wrapper}>
+      <AnimatePresence>
         {allPosts.map((post, index) =>
-            <Link href={`/posts/${post.id}`}>
-              <motion.div layout className={styles.blog_card}>
+              <motion.div 
+              animate={{opacity: 1}}
+              initial={{opacity: 0}}
+              exit={{opacity: 0}}
+              transition={{duration:0.4}}
+              key={post.title}
+              // layout 
+              className={styles.blog_card}>
+                <Link href={`/posts/${post.id}`}>
                 <div className={styles.blog_image}>
                   <img src={post.imgUrl}/>
                   {/* hello */}
@@ -27,11 +34,12 @@ const BlogCardFour = ({allPosts}) => {
                     Read More
                   </button>
                 </div>
+                </Link>
             </motion.div>
-          </Link>
         )}
-      </AnimatePresence>
+        </AnimatePresence>
       </motion.div>
+      {/* </AnimatePresence> */}
     </div>
   )
 }
