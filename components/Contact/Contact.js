@@ -6,16 +6,14 @@ import { motion } from 'framer-motion';
 
 const Contact = () => {
   return (
-    // <motion.div
-    //     initial={{opacity: 0, y: "100%"}}
-    //     animate={{opacity: 1, y: "0%"}}
-    //     exit={{opacity: 1}}
-    //     transition={{duration: 1, ease: "easeOut"}}
-    //     className={styles.container}>
-    <div>
-        contact me~~
+    <div className={styles.container}>
+        <div className={styles.left}>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </div>
+        <div className={styles.right}>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </div>
     </div>
-    // </motion.div>
   )
 }
 

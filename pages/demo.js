@@ -3,18 +3,43 @@
 import React from 'react'
 import InstaGallery from '@/components/ImageGallery/InstaGallery'
 import { MdWidthNormal } from 'react-icons/md';
+import { ThemeUIProvider } from 'theme-ui';
+import { Box, Label, Input, Button } from 'theme-ui'
 import { motion } from 'framer-motion';
+
+export const theme = {
+  fonts: {
+    body: 'Menlo, sans-serif',
+    heading: '"Avenir Next", sans-serif',
+    monospace: 'Menlo, monospace',
+  },
+  colors: {
+    text: '#000',
+    background: '#fff',
+    primary: '#33e',
+  },
+}
 
 export default function Home({ galleryData }) {
     return (
+      <ThemeUIProvider theme={theme}>
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: .6 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: .6 }}
+      >
+        <h1
+          sx={{
+            color: 'primary',
+            fontFamily: 'monospace',
+          }}
         >
+          Hello
+        </h1>
         <InstaGallery galleryData={galleryData}/>
       </motion.div>
+      </ThemeUIProvider>
     )
   }
 

@@ -2,7 +2,7 @@ import React, { use } from 'react'
 import { useState } from 'react'
 import styles from '@/styles/page.module.css'
 import Layout from '@/components/Layout/Layout'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import Modal from '@/components/Ｍodal/Modal'
 import {AiOutlineArrowLeft, AiOutlineArrowRight} from 'react-icons/ai'
 
@@ -38,7 +38,7 @@ const gallery = ({ galleryData }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: .6 }}
+        // transition={{ duration: .6, delayChildren: 1, staggerChildren: 0.08}}
         className={styles.container}
         >
         <div className={styles.wrapper}>
@@ -75,9 +75,11 @@ const gallery = ({ galleryData }) => {
               <img src={galleryData[8].image}/>
             </div> */}
         </div>
-        {showModal && (
-          <Modal showModal={showModal} galleryData = {galleryData} imageIndex = {imageIndex} setNextImage={setNextImage} setPrevImage={setPrevImage} setShowModal={setShowModal}/>
-        )}
+        <AnimatePresence>
+          {showModal && (
+            <Modal showModal={showModal} galleryData = {galleryData} imageIndex = {imageIndex} setNextImage={setNextImage} setPrevImage={setPrevImage} setShowModal={setShowModal}/>
+          )}
+        </AnimatePresence>
       </motion.div>
   )
 }

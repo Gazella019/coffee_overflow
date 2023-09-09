@@ -24,16 +24,17 @@ export default function Home() {
       </Head>
       <main>
         {/* <Hero/> */}
-        {/* <motion.div
+        <motion.div
           initial={{opacity: 0}}
           animate={{opacity: 1}}
-          transition={{duration: 2}}
-        > */}
+          exit={{opacity: 0}}
+          transition={{duration: .6}}
+        >
           <SwiperOne/>
           {/* <SwiperTwo/> */}
           <About/>
           <Biography/>
-        {/* </motion.div> */}
+        </motion.div>
         {/* <BlogCardOne/> */}
         {/* <BlogCardTwo/> */}
       </main>

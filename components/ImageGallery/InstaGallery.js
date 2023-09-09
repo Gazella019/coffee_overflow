@@ -26,7 +26,10 @@ const InastaGallery = ({galleryData}) => {
               alt={data.title}
             />
           </motion.div>
-        )}s
+          // <motion.div variants={galleryAnimation}>
+          //   hello
+          // </motion.div>
+        )}
         
       </motion.div>
     </motion.div>
