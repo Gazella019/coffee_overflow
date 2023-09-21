@@ -21,7 +21,9 @@ const Biography = () => {
                 visible: {opacity:1, y:0},
             }}
             initial="hidden"
-            animate={mainControls}
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.8 }}
+            transition= {{duration: .6}}
             className={styles.work}>
                 <h1>Work</h1>
                 <div className={styles.card}>
@@ -76,7 +78,8 @@ const Biography = () => {
             }}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.8 }}
+            viewport={{ once: true, amount: 0.8 }}
+            transition= {{duration: .6}}
             >
                 <h1>Education</h1>
                 <div className={styles.card}>

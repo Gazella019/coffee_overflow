@@ -8,9 +8,6 @@ const InastaGallery = ({galleryData}) => {
   return (
     <motion.div className={styles.container} initial="initial" animate="animate">
       <div className={styles.title_area}>
-        {/* <h1>
-          Helper robots for a better every day
-        </h1> */}
         <AnimateWords title="Helper robots for a better every day"/>
         <motion.div className={styles.text} variants={riseWithFade}>
           In this video, we'll build a modern landing page in Next.js with advanced loading animations using Framer Motion. We'll also utilize TailwindCSS to help style our page

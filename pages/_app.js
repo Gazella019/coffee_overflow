@@ -7,7 +7,6 @@ import githubTheme from 'typography-theme-github'
 import noriegaTheme from 'typography-theme-noriega'
 import { motion, AnimatePresence } from 'framer-motion'
 
-
 export default function App({ Component, pageProps, router }) {
   // const theme = toTheme(noriegaTheme)
   const theme = toTheme(githubTheme)
@@ -15,16 +14,16 @@ export default function App({ Component, pageProps, router }) {
     <ThemeUIProvider theme={theme}>
       <Layout>
         <AnimatePresence initial={false}
-          mode="wait"
+        mode="wait"
         >
-          {/* <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: .6 }}
-          > */}
+          <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 2 }}
+          >
             <Component key={router.pathname} {...pageProps} />
-          {/* </motion.div> */}
+          </motion.div>
         </AnimatePresence>
       </Layout>
     </ThemeUIProvider>

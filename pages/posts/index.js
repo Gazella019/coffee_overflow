@@ -21,18 +21,12 @@ const Home = ({ allPosts }) => {
     }
     // setPostList(allPosts);
     return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: .6 }}
-      className={styles.container}
-    >
+    <div>
         <Category postList={postList} filterListByCategory={filterListByCategory}/>
         <div>
             <BlogCardFour allPosts={fileterList}/>
         </div>
-    </motion.div>
+    </div>
   )
 }
 

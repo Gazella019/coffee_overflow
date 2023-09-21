@@ -5,7 +5,7 @@ const fadeTransition = ({children}) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      animate={{ opacity: 0 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 2 }}
     >

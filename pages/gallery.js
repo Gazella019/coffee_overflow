@@ -1,7 +1,6 @@
 import React, { use } from 'react'
 import { useState } from 'react'
 import styles from '@/styles/page.module.css'
-import Layout from '@/components/Layout/Layout'
 import { motion, AnimatePresence } from 'framer-motion'
 import Modal from '@/components/Ｍodal/Modal'
 import {AiOutlineArrowLeft, AiOutlineArrowRight} from 'react-icons/ai'
@@ -34,53 +33,21 @@ const gallery = ({ galleryData }) => {
     setImageIndex(index);
   }
   return (
-        <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        // transition={{ duration: .6, delayChildren: 1, staggerChildren: 0.08}}
-        className={styles.container}
-        >
+        <div className={styles.container}>
+          <h2>Gallery</h2>
         <div className={styles.wrapper}>
           {galleryData.map((data, index) => (
               <div className={styles.image_card} onClick={() => setModal(index)}>
                 <img src={data.image}/>
               </div>
           ))}
-            {/* <div className={styles.image_card} onClick={() => setShowModal(true)}>
-              <img src={galleryData[0].image}/>
-            </div>
-            <div className={`${styles.image_card} ${styles.big}`}>
-              <img src={galleryData[1].image}/>
-            </div>
-            <div className={styles.image_card}>
-              <img src={galleryData[2].image}/>
-            </div>
-            <div className={styles.image_card}>
-              <img src={galleryData[3].image}/>
-            </div>
-            <div className={`${styles.image_card} ${styles.horizontal}`}>
-              <img src={galleryData[4].image}/>
-            </div>
-            <div className={styles.image_card}>
-              <img src={galleryData[5].image}/>
-            </div>
-            <div className={`${styles.image_card} ${styles.vertical}`}>
-              <img src={galleryData[6].image}/>
-            </div>
-            <div className={styles.image_card}>
-              <img src={galleryData[7].image}/>
-            </div>
-            <div className={styles.image_card}>
-              <img src={galleryData[8].image}/>
-            </div> */}
         </div>
         <AnimatePresence>
           {showModal && (
             <Modal showModal={showModal} galleryData = {galleryData} imageIndex = {imageIndex} setNextImage={setNextImage} setPrevImage={setPrevImage} setShowModal={setShowModal}/>
           )}
         </AnimatePresence>
-      </motion.div>
+      </div>
   )
 }
 
