@@ -4,8 +4,9 @@ import styles from '@/styles/page.module.css'
 import { motion, AnimatePresence } from 'framer-motion'
 import Modal from '@/components/Ｍodal/Modal'
 import {AiOutlineArrowLeft, AiOutlineArrowRight} from 'react-icons/ai'
+import Image from 'next/image'
 
-const gallery = ({ galleryData }) => {
+const Gallery = ({ galleryData }) => {
 
   const [showModal, setShowModal] = useState(false);
   const [imageIndex, setImageIndex] = useState(1);
@@ -37,8 +38,13 @@ const gallery = ({ galleryData }) => {
           <h2>Gallery</h2>
         <div className={styles.wrapper}>
           {galleryData.map((data, index) => (
-              <div className={styles.image_card} onClick={() => setModal(index)}>
-                <img src={data.image}/>
+              <div className={styles.image_card} key={index} onClick={() => setModal(index)}>
+                {/* <img src={data.image}/> */}
+                <Image src={data.image}
+                width={500}
+                height={500}
+                alt="Picture of the author"
+                />
               </div>
           ))}
         </div>
@@ -79,4 +85,4 @@ export async function getStaticProps() {
   }
 }
 
-export default gallery
+export default Gallery

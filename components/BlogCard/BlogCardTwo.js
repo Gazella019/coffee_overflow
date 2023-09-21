@@ -2,13 +2,18 @@ import React from 'react'
 import styles from '@/styles/BlogCardTwo.module.css'
 import blogData from '@/data/blogcard'
 import ButtonOne from '@/components/Button/ButtonOne.js'
+import Image from 'next/image'
 
 const BlogCardTwo = () => {
   return (
     <section className={styles.container}>
         <div className={styles.blog_card}>
           <div className={styles.blog_img}>
-            <img src={blogData[0].imgUrl}/>
+            <Image src={blogData[0].imgUrl}
+             width={500}
+             height={500}
+             alt="img"
+            />
           </div>
           <div className={styles.blog_content}>
             <div className={styles.blog_description}>
@@ -21,7 +26,11 @@ const BlogCardTwo = () => {
 
         <div className={styles.blog_card}>
           <div className={styles.blog_img}>
-            <img src={blogData[1].imgUrl}/>
+            <Image src={blogData[1].imgUrl}
+              width={500}
+              height={500}
+              alt="img"
+            />
           </div>
           <div className={styles.blog_content}>
             <h1>{blogData[1].title}</h1>

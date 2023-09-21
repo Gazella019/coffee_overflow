@@ -2,6 +2,7 @@ import React from 'react'
 import styles from "./SwiperOne.module.css"
 import { Navigation, EffectFade, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Image from 'next/image';
 import swiperData from '@/data/swiperData';
 import 'swiper/css';
 import "swiper/css/navigation";
@@ -30,14 +31,18 @@ const SwiperOne = () => {
         className={styles.swiper}
         effect='fade'
         >
-        {swiperData.map((data) => (
-            <SwiperSlide>
+        {swiperData.map((data, index) => (
+            <SwiperSlide key={index}>
                 {/* {data.title} */}
-                <img src={data.imgUrl} className={styles.slide_image}/>
+                <Image src={data.imgUrl}
+                  width={1000}
+                  height={1000}
+                  alt="img"
+                  className={styles.slide_image}
+                />
             </SwiperSlide>
         ))}
     </Swiper>
-        {/* <div className={"test"}>hello</div> */}
     </div>
   )
 }

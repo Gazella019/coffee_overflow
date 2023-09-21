@@ -1,4 +1,5 @@
 import React, { useRef } from 'react'
+import Image from 'next/image';
 import styles from "./SwiperTwo.module.css"
 import { Navigation, EffectFade, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -42,10 +43,15 @@ const SwiperTwo = () => {
                     className={styles.swiper}
                     onSwiper={swiper => (swiperRef.current = swiper)}
                     >
-                    {swiperData.map((data) => (
-                        <SwiperSlide>
+                    {swiperData.map((data, index) => (
+                        <SwiperSlide key={index}>
                             <div className={styles.slide}>
-                                <img src={data.imgUrl} className={styles.slide_image}/>
+                                <Image src={data.imgUrl} 
+                                    width={1000}
+                                    height={1000}
+                                    alt="img"
+                                    className={styles.slide_image}
+                                />
                                 <div className={styles.slide_box}>
                                     <BiMap/>
                                     <p>
@@ -63,7 +69,7 @@ const SwiperTwo = () => {
             </div>
             <div className={styles.swiper_navigation}>
                 {swiperData.map((data, index) => (
-                    <div onClick={() => navigateTo(index)}>{index + 1}</div>
+                    <div key={index} onClick={() => navigateTo(index)}>{index + 1}</div>
                 ))}
             </div>
         </div>

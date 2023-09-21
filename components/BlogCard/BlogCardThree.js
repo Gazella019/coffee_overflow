@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './BlogCardThree.module.css'
+import Image from 'next/image'
 
 const blogData = [
   {
@@ -31,11 +32,18 @@ const BlogCardThree = () => {
   return (
       <div className={styles.container}>
         <div className={styles.wrapper}>
-          {blogData.map(blog => (
-              <div className={styles.blog_card}>
+          {blogData.map((blog, index) => (
+              <div
+                className={styles.blog_card}
+                key={index}
+              >
                 <div className={styles.blog_img}>
                   {/* hello */}
-                  <img src={blog.imgUrl}/>
+                  <Image src={blog.imgUrl}
+                    width={500}
+                    height={500}
+                    alt="img"
+                  />
                 </div>
                 <div className={styles.blog_content}>
                   <h2>{blog.category}</h2>

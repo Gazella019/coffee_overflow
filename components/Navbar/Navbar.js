@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './Navbar.module.css'
 import Link from 'next/link';
+import Image from 'next/image';
 import { BsFacebook, BsInstagram, BsGithub} from 'react-icons/bs';
 
 const Navbar = () => {
@@ -9,7 +10,11 @@ const Navbar = () => {
         <div className={styles.navbar_main}>
             <div className={styles.navbar_logo}>
                 <Link href={'/'}>
-                    <img src='/logo.png'/>
+                    <Image src='/logo.png'
+                        width={500}
+                        height={500}
+                        alt="img"
+                    />
                 </Link>
             </div>
             <ul className={styles.navbar_list}>

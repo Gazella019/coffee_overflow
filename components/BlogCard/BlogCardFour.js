@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './BlogCardFour.module.css'
 import Link from 'next/link'
+import Image from 'next/image'
 import { staggerChildernAnimate, galleryAnimation } from '@/utils/animations'
 import { motion, AnimatePresence } from "framer-motion"
 // import data from '@/data/blogPost.json'
@@ -26,7 +27,13 @@ const BlogCardFour = ({allPosts}) => {
                 className={styles.blog_card}>
                   <Link href={`/posts/${post.id}`}>
                     <motion.div className={styles.blog_box}>
-                      <img className={styles.blog_image} src={post.imgUrl}/>
+                      <Image 
+                        src={post.imgUrl}
+                        width={500}
+                        height={500}
+                        alt="blog image"
+                        className={styles.blog_image} 
+                      />
                       {/* hello */}
                     </motion.div>
                     <div className={styles.blog_text}>

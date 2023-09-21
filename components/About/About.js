@@ -35,8 +35,10 @@ const About = () => {
         viewport={{ once: true, amount: 0.8 }}
         transition= {{duration: .3}}>
             <div className={styles.about_img}>
-                <img
+                <Image
                     src="/images/aboutme.jpg"
+                    width={500}
+                    height={500}
                     alt="about-me"
                 />
             </div>
