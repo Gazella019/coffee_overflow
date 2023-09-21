@@ -16,8 +16,10 @@ const Category = ({postList, activeIndex, filterListByCategory}) => {
         <div className={styles.container}>
             <div className={styles.wrapper}>
                 <ul className={styles.category_list}>
-                    {uniqueCategory.map(category =>
-                        <li className={`${styles.category} 
+                    {uniqueCategory.map((category, index) =>
+                        <li
+                        key={index} 
+                        className={`${styles.category} 
                         ${(activeCategory === category ? styles.active : null)}`} 
                         onClick={() => onClickHandler(category)}>
                             {category}

@@ -1,18 +1,19 @@
 import React, { useRef, useEffect } from 'react'
 import styles from './Biography.module.css'
 import { motion, useInView, useAnimation } from 'framer-motion'
+import Image from 'next/image'
 
 const Biography = () => {
 
     const ref = useRef(null);
-    const isInview = useInView(ref, {once: true});
-    const mainControls = useAnimation();
+    // const isInview = useInView(ref, {once: true});
+    // const mainControls = useAnimation();
 
-    useEffect(() => {
-        if (isInview) {
-            mainControls.start("visible")
-        }
-    }, [isInview])
+    // useEffect(() => {
+    //     if (isInview) {
+    //         mainControls.start("visible")
+    //     }
+    // }, [isInview])
     return (
         <div ref={ref} className={styles.container}>
             <motion.div
@@ -28,7 +29,12 @@ const Biography = () => {
                 <h1>Work</h1>
                 <div className={styles.card}>
                     <div className={styles.card_logo}>
-                        <img src='mediatek.png'/>
+                        <Image src='/mediatek.png'
+                            width={150}
+                            height={75}
+                            alt="mediatek"
+                            className={styles.card_img}
+                        />
                     </div>
                     <div className={styles.card_content}>
                         <div className={styles.card_title}>
@@ -50,7 +56,12 @@ const Biography = () => {
 
                 <div className={styles.card}>
                     <div className={styles.card_logo}>
-                        <img src='amazon.png'/>
+                        <Image src='/amazon.png'
+                            width={100}
+                            height={50}
+                            alt="amazon"
+                            className={styles.card_img}
+                        />
                     </div>
                     <div className={styles.card_content}>
                         <div className={styles.card_title}>
@@ -84,7 +95,12 @@ const Biography = () => {
                 <h1>Education</h1>
                 <div className={styles.card}>
                     <div className={styles.card_logo}>
-                        <img src='NTHU.png'/>
+                        <Image src='/NTHU.png'
+                            width={100}
+                            height={100}
+                            alt="NTHU"
+                            className={styles.card_img}
+                        />
                     </div>
                     <div className={styles.card_content}>
                         <div className={styles.card_title}>
@@ -103,7 +119,12 @@ const Biography = () => {
 
                 <div className={styles.card}>
                     <div className={styles.card_logo}>
-                        <img src='CCU.png'/>
+                        <Image src='/CCU.png'
+                            width={100}
+                            height={100}
+                            alt="CCU"
+                            className={styles.card_img}
+                        />
                     </div>
                     <div className={styles.card_content}>
                         <div className={styles.card_title}>

@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from '@/styles/BlogCardOne.module.css'
 import blogData from '@/data/blogcard'
+import Image from 'next/image'
 // import heroSliderData from "../../data/hero-sliders/hero-slider-ten.json";
 
 const BlogCardOne = () => {
@@ -9,7 +10,11 @@ const BlogCardOne = () => {
     <section className={styles.container}>
         <div className={styles.blog_card}>
           <div className={styles.blog_img}>
-            <img src={blogData[0].imgUrl}/>
+            <Image src={blogData[0].imgUrl}
+              width={500}
+              height={500}
+              alt="img"
+            />
           </div>
           <div className={styles.blog_content}>
             <h1>{blogData[0].title}</h1>
@@ -20,7 +25,11 @@ const BlogCardOne = () => {
 
         <div className={styles.blog_card}>
           <div className={styles.blog_img}>
-            <img src={blogData[1].imgUrl}/>
+            <Image src={blogData[1].imgUrl}
+            width={500}
+            height={500}
+            alt="img"
+            />
           </div>
           <div className={styles.blog_content}>
             <h1>{blogData[1].title}</h1>

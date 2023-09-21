@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from "./Modal.module.css"
+import Image from 'next/image'
 import { MdClose } from 'react-icons/md'
 import { motion, AnimatePresence } from 'framer-motion'
 import {AiOutlineArrowLeft, AiOutlineArrowRight} from 'react-icons/ai'
@@ -25,10 +26,18 @@ const Modal = ({galleryData, imageIndex, setNextImage, setPrevImage, setShowModa
           className={styles.modal_card}>
             {(ratio == "horizontal" ? 
               <div className={styles.horizontal_img} onClick={(e) => e.preventDefault()}>
-                <img src={galleryData[`${imageIndex}`].image}/>
+                <Image src={galleryData[`${imageIndex}`].image}
+                  width={1000}
+                  height={1000}
+                  alt="modal img"
+                />
               </div> : 
               <div className={styles.vertical_img}>
-                <img src={galleryData[`${imageIndex}`].image}/>
+                <Image src={galleryData[`${imageIndex}`].image}
+                  width={1000}
+                  height={1000}
+                  alt="modal img"
+                />
               </div>
             )}
           </motion.div>

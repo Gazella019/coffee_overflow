@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from '@/styles/CategoryCardOne.module.css'
 import Title from '../Title/Title'
+import Image from 'next/image'
 
 const CategoryCardOne = () => {
   return (
@@ -11,7 +12,11 @@ const CategoryCardOne = () => {
             </div>
             <div className={styles.card_section}>
                 <div className={styles.card}>
-                    <img src="https://images.unsplash.com/photo-1679521878363-6987b06a30f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80"/>
+                    <Image src="https://images.unsplash.com/photo-1679521878363-6987b06a30f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80"
+                        width={500}
+                        height={500}
+                        alt="img"
+                    />
                     <div className={styles.card_body}>
                         <h1 className={styles.card_title}>
                             NYC
@@ -25,7 +30,11 @@ const CategoryCardOne = () => {
                     </div>
                 </div>
                 <div className={styles.card}>
-                    <img src="https://images.unsplash.com/photo-1679597454618-d1ae16573606?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80"/>
+                    <Image src="https://images.unsplash.com/photo-1679597454618-d1ae16573606?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80"
+                        width={500}
+                        height={500}
+                        alt="img"
+                    />
                     <div className={styles.card_body}>
                         <h1 className={styles.card_title}>
                             NYC
@@ -39,7 +48,11 @@ const CategoryCardOne = () => {
                     </div>
                 </div>
                 <div className={styles.card}>
-                    <img src="https://images.unsplash.com/photo-1586987949297-30be6391da83?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80"/>
+                    <Image src="https://images.unsplash.com/photo-1586987949297-30be6391da83?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80"
+                        width={500}
+                        height={500}
+                        alt="img"
+                    />
                     <div className={styles.card_body}>
                         <h1 className={styles.card_title}>
                             NYC
